@@ -42,5 +42,5 @@ func (this *PageController) CheckLogin() {
 	}
 
 	this.Ctx.SetCookie("sig", sig, 2592000, "/")
-	this.Redirect(fmt.Sprintf("%s/auth/login?sig=%s&callback=http://%s:%d%s", g.UicExternal, sig, this.Ctx.Input.Host(), this.Ctx.Input.Port(), this.Ctx.Input.Uri()), 302)
+	this.Redirect(fmt.Sprintf("%s/auth/login?sig=%s&callback=http://%s:%d%s", g.UicExternal, sig, this.Ctx.Input.Host(), this.Ctx.Input.Port(), this.Ctx.Input.URI()), 302)
 }

@@ -19,7 +19,7 @@ type MainController struct {
 func (this *MainController) Get() {
 	this.Data["Mappings"] = g.TplMapping
 	this.Layout = "layout.html"
-	this.TplNames = "index.html"
+	this.TplName = "index.html"
 }
 
 func (this *MainController) Build() {
@@ -34,7 +34,7 @@ func (this *MainController) Build() {
 		this.Data["Mappings"] = g.TplMapping
 		this.Data["O"] = o
 		this.Layout = "layout.html"
-		this.TplNames = "index.html"
+		this.TplName = "index.html"
 	}()
 
 	if o.App == "" {
@@ -146,7 +146,7 @@ func (this *MainController) Progress() {
 
 	this.Data["Image"] = fmt.Sprintf("%s/%s/%s:%s", g.Registry, build.UserName, build.App, build.Version)
 	this.Layout = "layout.html"
-	this.TplNames = "progress.html"
+	this.TplName = "progress.html"
 }
 
 func (this *MainController) Log() {
@@ -173,7 +173,7 @@ func (this *MainController) Log() {
 func (this *MainController) History() {
 	this.Data["BuildHistory"] = models.BuildHistory(this.CurrentUser.Id)
 	this.Layout = "layout.html"
-	this.TplNames = "history.html"
+	this.TplName = "history.html"
 }
 
 func (this *MainController) DeleteHistory() {

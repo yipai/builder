@@ -45,15 +45,15 @@ func (this *BaseController) GetIntWithDefault(paramKey string, defaultVal int) i
 
 func (this *BaseController) ServeErrJson(msg string) {
 	this.Data["json"] = &models.ReturnDto{Msg: msg}
-	this.ServeJson()
+	this.ServeJSON()
 }
 
 func (this *BaseController) ServeOKJson() {
 	this.Data["json"] = &models.ReturnDto{Msg: ""}
-	this.ServeJson()
+	this.ServeJSON()
 }
 
 func (this *BaseController) ServeDataJson(val interface{}) {
 	this.Data["json"] = &models.ReturnDto{Msg: "", Data: val}
-	this.ServeJson()
+	this.ServeJSON()
 }

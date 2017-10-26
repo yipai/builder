@@ -130,7 +130,7 @@ func ParseConfig() {
 	dblink := fmt.Sprintf("%s:%s@tcp(%s:%s)/%s?charset=utf8", dbuser, dbpass, dbhost, dbport, dbname)
 	// dblink = "root:1234@/uic?charset=utf8&loc=Asia%2FChongqing"
 
-	orm.RegisterDriver("mysql", orm.DR_MySQL)
+	//orm.RegisterDriver("mysql", orm.DR_MySQL)
 	orm.RegisterDataBase("default", "mysql", dblink+"&loc=Asia%2FChongqing", 30, 200)
 	// orm.DefaultTimeLoc = time.UTC
 
